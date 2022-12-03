@@ -15,8 +15,8 @@ let namePage = document.querySelector(".user-info__name")
 let jobPage = document.querySelector(".user-info__job")
 
 
-let nameInput = formElement.querySelector(".popup__input_type_name")// Воспользуйтесь инструментом .querySelector()
-let jobInput = formElement.querySelector(".popup__input_type_info")// Воспользуйтесь инструментом .querySelector()
+let nameInput = formElement.querySelector(".popup-edit-profile__input_type_name")// Воспользуйтесь инструментом .querySelector()
+let jobInput = formElement.querySelector(".popup-edit-profile__input_type_info")// Воспользуйтесь инструментом .querySelector()
 
 function refreshValueInput(){
     nameInput.value = namePage.textContent
