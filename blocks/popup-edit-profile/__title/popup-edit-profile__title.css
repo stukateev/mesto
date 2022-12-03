@@ -4,3 +4,11 @@
     font-family: 'Inter-Black', serif;
     line-height: 29px;
 }
+
+@media screen and (max-width: 1050px) {
+    .popup-edit-profile__title {
+        font-size: 18px;
+        line-height: 22px;
+
+    }
+}

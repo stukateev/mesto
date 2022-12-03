@@ -2,6 +2,13 @@
     width: 142px;
     cursor: pointer;
     transition: linear 1s;
+
+}
+@media screen and (max-width: 1024px) {
+    .header__logo {
+        margin-left: 27px;
+        width: 103px;
+    }
 }
 .header__logo:hover{
     background: black;

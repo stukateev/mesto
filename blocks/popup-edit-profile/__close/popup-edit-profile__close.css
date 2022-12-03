@@ -1,8 +1,13 @@
 .popup-edit-profile__close {
-    width: 26px;
+    width: 32px;
+    height: 32px;
+    background-color: black;
+    background-image: url("../../../images/close.svg");
+    background-size: cover;
+
     position: absolute;
-    top: -26px;
-    right: -26px;
+    top: -40px;
+    right: -40px;
     cursor: pointer;
     transition: opacity linear .3s;
 }
@@ -11,6 +16,8 @@
     .popup-edit-profile__close {
         top: -48px;
         right: 0;
+        width: 20px;
+        height: 20px;
     }
 }
 .popup-edit-profile__close:hover{

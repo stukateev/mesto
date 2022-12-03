@@ -4,9 +4,9 @@
     margin: 0;
     background-color: black;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1050px) {
     .page {
-        padding-left: 19px;
-        padding-right: 19px;
+        padding-left: 0;
+        padding-right: 0;
     }
 }

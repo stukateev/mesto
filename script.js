@@ -1,15 +1,15 @@
 let buttonUserInfo = document.querySelector(".user-info__edit");
 let popupUserInfo = document.querySelector(".popup-edit-profile");
-let closeTabUserInfo = document.querySelector(".popup_edit-profile__close");
+let closeTabUserInfo = document.querySelector(".popup-edit-profile__close");
 function openChangeUserInfo(){
-    popupUserInfo.classList.remove("popup_edit-profile_state_disabled")
+    popupUserInfo.classList.remove("popup-edit-profile_state_disabled")
 }
 
 
 
 
 
-let formElement = document.querySelector(".popup_edit-profile__form")// Воспользуйтесь методом querySelector()
+let formElement = document.querySelector(".popup-edit-profile__form")// Воспользуйтесь методом querySelector()
 // Находим поля формы в DOM
 let namePage = document.querySelector(".user-info__name")
 let jobPage = document.querySelector(".user-info__job")
@@ -34,7 +34,7 @@ function refreshValueInput(){
         // Получите значение полей jobInput и nameInput из свойства value
         closeChangeUserInfo()
         // Выберите элементы, куда должны быть вставлены значения полей
-        refreshValueInput()
+
         // Вставьте новые значения с помощью textContent
     }
 
@@ -43,11 +43,9 @@ function refreshValueInput(){
 formElement.addEventListener('submit', handleFormSubmit);
 
 function closeChangeUserInfo(){
-    popupUserInfo.classList.add("popup_edit-profile_state_disabled")
-    refreshValueInput()
+    popupUserInfo.classList.add("popup-edit-profile_state_disabled")
 }
 
-buttonUserInfo.addEventListener('click', openChangeUserInfo);
+buttonUserInfo.addEventListener('click', openChangeUserInfo, refreshValueInput);
 closeTabUserInfo.addEventListener('click', closeChangeUserInfo);
 
-refreshValueInput()

@@ -10,12 +10,16 @@
     margin-top: 16px;
     margin-left: 18px;
     transition: opacity linear .3s;
+
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 1050px) {
     .user-info__edit {
-        margin: 0;
-        display: inline-block;
+        margin: 0 0 0 10px;
+        width: 18px;
+        height: 18px;
+        background-size: 8px 8px;
+
     }
 }
 .user-info__edit:hover {

@@ -2,7 +2,7 @@
     background: url(../../../images/like-icon.svg) center no-repeat;
     background-color: transparent;
     border: none;
-    width: 21px;
+    min-width: 22px;
     height: 19px;
     cursor: pointer;
     transition: opacity .3s linear;

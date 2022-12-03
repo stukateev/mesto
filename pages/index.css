@@ -5,6 +5,7 @@
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
 @import url(../blocks/profile/profile.css);
+@import url(../blocks/button/button.css);
 
 @import url(../blocks/user-info/user-info.css);
 @import url(../blocks/user-info/__edit/user-info__edit.css);
@@ -17,7 +18,7 @@
 
 
 
-@import url(../blocks/button/button.css);
+
 @import url(../blocks/places-list/places-list.css);
 @import url(../blocks/place-card/place-card.css);
 @import url(../blocks/place-card/__image/place-card__image.css);
