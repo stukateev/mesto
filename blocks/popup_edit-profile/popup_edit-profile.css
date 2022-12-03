@@ -1,13 +1,3 @@
-@import url(./__content/popup_edit-profile__content.css);
-@import url(./__close/popup_edit-profile__close.css);
-@import url(./__title/popup_edit-profile__title.css);
-@import url(./__form/popup_edit-profile__form.css);
-@import url(./__input/popup_edit-profile__input.css);
-
-
-
-
-
 .popup_edit-profile {
     position: fixed;
     top: 0;
