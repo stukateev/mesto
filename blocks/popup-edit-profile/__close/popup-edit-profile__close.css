@@ -1,4 +1,4 @@
-.popup_edit-profile__close {
+.popup-edit-profile__close {
     width: 26px;
     position: absolute;
     top: -26px;
@@ -8,11 +8,11 @@
 }
 
 @media screen and (max-width: 540px) {
-    .popup_edit-profile__close {
+    .popup-edit-profile__close {
         top: -48px;
         right: 0;
     }
 }
-.popup_edit-profile__close:hover{
+.popup-edit-profile__close:hover{
     opacity: 60%;
 }

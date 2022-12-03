@@ -1,5 +1,5 @@
 let buttonUserInfo = document.querySelector(".user-info__edit");
-let popupUserInfo = document.querySelector(".popup_edit-profile");
+let popupUserInfo = document.querySelector(".popup-edit-profile");
 let closeTabUserInfo = document.querySelector(".popup_edit-profile__close");
 function openChangeUserInfo(){
     popupUserInfo.classList.remove("popup_edit-profile_state_disabled")

@@ -1,4 +1,4 @@
-.popup_edit-profile__content {
+.popup-edit-profile__content {
     width: 430px;
     min-height: 330px;
     background-color: #fff;
@@ -9,7 +9,7 @@
 }
 
 @media screen and (max-width: 540px) {
-    .popup_edit-profile__content {
+    .popup-edit-profile__content {
         width: calc(100% - 38px);
     }
 }
