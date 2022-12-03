@@ -6,12 +6,14 @@
 @import url(../blocks/header/__logo/header__logo.css);
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/user-info/user-info.css);
+@import url(../blocks/user-info/__edit/user-info__edit.css);
 @import url(../blocks/button/button.css);
 @import url(../blocks/places-list/places-list.css);
 @import url(../blocks/place-card/place-card.css);
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
 @import url(../blocks/popup_edit-profile/popup_edit-profile.css);
+@import url(../blocks/popup_edit-profile/__button/popup_edit-profile__button.css);
 @import url(../blocks/popup_edit-profile/_state/popup_edit-profile_state_disabled.css);
-
+@import url(../blocks/place-card/__like-icon/place-card__like-icon.css);
 
