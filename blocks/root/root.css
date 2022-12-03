@@ -1,0 +1,16 @@
+
+.root {
+    min-height: 100vh;
+    font-family: 'Inter-Regular', serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+
+}
+
+@media screen and (max-width: 1024px) {
+    .root {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

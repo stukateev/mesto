@@ -1,0 +1,13 @@
+.places-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 282px);
+    grid-gap: 18px 18px;
+    justify-content: space-between;
+    margin-bottom: 67px;
+}
+
+@media screen and (max-width: 1024px) {
+    .places-list {
+        justify-content: center;
+    }
+}
