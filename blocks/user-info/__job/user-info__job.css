@@ -1,5 +1,5 @@
 .user-info__job {
-    margin: 16px 0 0 0;
+    margin: 6px 0 0 0;
     font-family: 'Inter-Regular', serif;
     font-size: 18px;
     line-height: 22px;
@@ -11,6 +11,7 @@
 
 @media screen and (max-width: 1050px) {
     .user-info__job {
+        margin-top: 8px;
         font-size: 14px;
         line-height: 17px;
     }

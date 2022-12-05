@@ -2,7 +2,8 @@ let buttonUserInfo = document.querySelector(".user-info__edit");
 let popupUserInfo = document.querySelector(".popup-edit-profile");
 let closeTabUserInfo = document.querySelector(".popup-edit-profile__close");
 function openChangeUserInfo(){
-    popupUserInfo.classList.remove("popup-edit-profile_state_disabled")
+    refreshValueInput()
+    popupUserInfo.classList.remove("popup-edit-profile_disabled")
 }
 
 
@@ -43,7 +44,7 @@ function refreshValueInput(){
 formElement.addEventListener('submit', handleFormSubmit);
 
 function closeChangeUserInfo(){
-    popupUserInfo.classList.add("popup-edit-profile_state_disabled")
+    popupUserInfo.classList.add("popup-edit-profile_disabled")
 }
 
 buttonUserInfo.addEventListener('click', openChangeUserInfo, refreshValueInput);

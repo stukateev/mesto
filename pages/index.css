@@ -35,6 +35,6 @@
 @import url(../blocks/popup-edit-profile/__title/popup-edit-profile__title.css);
 @import url(../blocks/popup-edit-profile/__form/popup-edit-profile__form.css);
 @import url(../blocks/popup-edit-profile/__input/popup-edit-profile__input.css);
-@import url(../blocks/popup-edit-profile/_state/popup-edit-profile_state_disabled.css);
+@import url(../blocks/popup-edit-profile/_disabled/popup-edit-profile_disabled.css);
 @import url(../blocks/place-card/__like-icon/place-card__like-icon.css);
 

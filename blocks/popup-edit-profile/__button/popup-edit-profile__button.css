@@ -8,13 +8,16 @@
     font-family: 'Inter-Regular', serif;
     background: #000000;
     border-radius: 2px;
+    border: none;
     transition: opacity linear .3s;
 
 }
 @media screen and (max-width: 1050px) {
     .popup-edit-profile__button {
+        margin-top: 45px;
         font-size: 14px;
         line-height: 17px;
+        height: 46px;
     }
 }
 
