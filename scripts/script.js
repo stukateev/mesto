@@ -47,6 +47,6 @@ function closeChangeUserInfo(){
     popupUserInfo.classList.add("popup-edit-profile_disabled")
 }
 
-buttonUserInfo.addEventListener('click', openChangeUserInfo, refreshValueInput);
+buttonUserInfo.addEventListener('click', openChangeUserInfo);
 closeTabUserInfo.addEventListener('click', closeChangeUserInfo);
 
