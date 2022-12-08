@@ -26,21 +26,14 @@ const initialCards = [
 ];
 const placesList = document.querySelector('.places-list');
 
-function createMarkup(citiName, linkToPic) {
-    const placeCard = document.createElement("div");
-    placeCard.classList.add("place-card");
-    placeCard.insertAdjacentHTML('beforeend', `
-      <div class="place-card__image">
-        <button class="button place-card__delete-icon"></button>
-      </div>
-      <div class="place-card__description">
-        <h2 class="place-card__name"></h2>
-        <button class="place-card__like-icon"></button>
-      </div>`);
-    placeCard.querySelector(".place-card__name").textContent = citiName;
-    placeCard.querySelector(".place-card__image").style.backgroundImage = `url(${linkToPic})`;
 
-    return placeCard;
+function createMarkup(citiName, linkToPic) {
+    const placeCardTemplate = document.querySelector('#place-card-template').content;
+    const placeCardElement = placeCardTemplate.querySelector('.place-card').cloneNode(true);
+    placeCardElement.querySelector(".place-card__name").textContent = citiName;
+    placeCardElement.querySelector(".place-card__image").style.backgroundImage = `url(${linkToPic})`;
+
+    return placeCardElement;
 }
 
 
