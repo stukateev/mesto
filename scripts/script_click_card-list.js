@@ -1,5 +1,5 @@
 const popupImage = document.querySelector(".popup-image");
-let buttonClosePopupImage = popupImage.querySelector(".popup__close");
+let buttonClosePopupImage = popupImage.querySelector(".popup-image__close");
 
 placesList.addEventListener('click', function (event) {
 
@@ -10,7 +10,7 @@ placesList.addEventListener('click', function (event) {
         placesList.removeChild(event.target.closest('.place-card'));
 
     } else if (event.target.classList.contains('place-card__image')) {
-        popupImage.classList.remove("popup_disabled");
+        popupImage.classList.remove("popup-image_disabled");
         const styleLink = event.target.getAttribute('style').slice(23,-3);
         let selectCard = event.target.parentNode.querySelector('.place-card__name').textContent;
         let popupImageImg = document.querySelector(".popup-image__img")
@@ -22,6 +22,6 @@ placesList.addEventListener('click', function (event) {
 });
 
 function closePopupImage(){
-    popupImage.classList.add("popup_disabled")
+    popupImage.classList.add("popup-image_disabled")
 }
 buttonClosePopupImage.addEventListener('click', closePopupImage);
