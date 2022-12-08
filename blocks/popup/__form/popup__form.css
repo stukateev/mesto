@@ -1,8 +1,8 @@
-.popup-edit-profile__form {
+.popup__form {
     margin-top: 42px;
 }
 @media screen and (max-width: 1050px) {
-    .popup-edit-profile__form {
+    .popup__form {
         margin-top: 65px;
     }
 }

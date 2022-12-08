@@ -1,0 +1,16 @@
+.popup-image__img {
+    display: block;
+    max-width: 75vw;
+    max-height: 75vw;
+    image-rendering: -moz-crisp-edges; /* Firefox */
+    -ms-interpolation-mode: nearest-neighbor;  /* IE */
+    image-rendering: crisp-edges;
+
+}
+
+@media screen and (max-width: 320px) {
+    .popup-image__img {
+        width:240px ;
+        height: auto;
+    }
+}

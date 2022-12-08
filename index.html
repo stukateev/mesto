@@ -21,69 +21,48 @@
               <h1 class="user-info__name">Жак-Ив Кусто</h1>
               <button type="button" class="button user-info__edit" ></button>
               <p class="user-info__job">WEB-developer</p>
-
             </div>
-
             <button type="button" class="button user-info__button"></button>
           </div>
         </section>
 
         <section class="places-list">
-          <div class="place-card">
-              <img class="place-card__image" alt="Карачаевск" src = "./images/karachaevsk.png">
-              <div class="place-card__description">
-                <h2 class="place-card__name">Карачаевск</h2>
-                <button type="button" class="place-card__like-icon"></button>
-              </div>
-          </div>
-          <div class="place-card">
-            <img class="place-card__image" alt="Эльбрус" src = "./images/elbrus.png">
-            <div class="place-card__description">
-              <h2 class="place-card__name">Гора Эльбрус</h2>
-              <button type="button" class="place-card__like-icon"></button>
-            </div>
-          </div>
-          <div class="place-card">
-            <img class="place-card__image" alt="Домбай" src = "./images/dombai.png">
-            <div class="place-card__description">
-              <h2 class="place-card__name">Домбай</h2>
-              <button type="button" class="place-card__like-icon"></button>
-            </div>
-          </div>
-          <div class="place-card">
-            <img class="place-card__image" alt="Эльбрус" src = "./images/elbrus.png">
-            <div class="place-card__description">
-              <h2 class="place-card__name">Гора Эльбрус</h2>
-              <button type="button" class="place-card__like-icon"></button>
-            </div>
-          </div>
-          <div class="place-card">
-            <img class="place-card__image" alt="Домбай" src = "./images/dombai.png">
-            <div class="place-card__description">
-              <h2 class="place-card__name">Домбай</h2>
-              <button type="button" class="place-card__like-icon"></button>
-            </div>
-          </div>
-          <div class="place-card">
-            <img class= "place-card__image" alt="Карачаевск" src = "./images/karachaevsk.png">
-            <div class="place-card__description">
-              <h2 class="place-card__name">Карачаево-Черкессия</h2>
-              <button type="button" class="place-card__like-icon"></button>
-            </div>
-          </div>
+
         </section>
 
-        <div class="popup-edit-profile popup-edit-profile_disabled">
-          <div class="popup-edit-profile__content">
-            <button type="button" class=" button popup-edit-profile__close"></button>
-            <h2 class="popup-edit-profile__title">Редактировать профиль</h2>
-            <form class="popup-edit-profile__form" name="formProfile" >
-              <input type="text" name="nameX" class="popup-edit-profile__input popup-edit-profile__input_type_name" placeholder="Имя"
+        <div class="popup popup-edit-profile popup_disabled">
+          <div class="popup__content">
+            <button type="button" class=" button popup__close"></button>
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <form class="popup__form" name="formProfile" >
+              <input type="text" name="nameX" class="popup__input popup-edit-profile__input_type_name" placeholder="Имя"
                      autocomplete="off" minlength="3" maxlength="25" required>
-              <input type="text" name="info" class="popup-edit-profile__input popup-edit-profile__input_type_info" placeholder="О себе"
+              <input type="text" name="info" class="popup__input popup-edit-profile__input_type_info" placeholder="О себе"
                      autocomplete="off" minlength="4" maxlength="40" required>
-              <button type="submit" name="submit" class="button popup-edit-profile__button ">Сохранить</button>
+              <button type="submit" name="submit" class="button popup__button ">Сохранить</button>
             </form>
+          </div>
+        </div>
+
+        <div class="popup popup-add-card popup_disabled ">
+          <div class="popup__content">
+            <button type="button" class=" button popup__close"></button>
+            <h2 class="popup__title">Новое место</h2>
+            <form class="popup__form" name="new">
+              <input type="text" name="name" class="popup__input popup__input_type_name "
+                     placeholder="Название" autocomplete="off" minlength="2" maxlength="30" required>
+              <input type="url" name="link" class="popup__input popup__input_type_url "
+                     placeholder="Ссылка на картинку" autocomplete="off" required>
+              <button type="submit" name="submit" class="button popup__button ">Создать</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="popup-image popup_disabled">
+          <div class="popup-image__content">
+            <button type="button" class=" button popup__close"></button>
+            <img  class="popup-image__img">
+            <h2  class="popup-image__name"></h2>
           </div>
         </div>
 
@@ -92,7 +71,9 @@
         <p class="footer__copyright">© 2022 Mesto Russia</p>
       </footer>
     </div>
-  <script src="scripts/script.js"></script>
+    <script src="scripts/script_card-list.js"></script>
+    <script src="scripts/script_user-info.js"></script>
+    <script src="scripts/script_click_card-list.js"></script>
 
   </body>
 

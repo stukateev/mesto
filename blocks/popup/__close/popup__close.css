@@ -1,4 +1,4 @@
-.popup-edit-profile__close {
+.popup__close {
     width: 32px;
     height: 32px;
     background-color: transparent;
@@ -12,8 +12,8 @@
     transition: opacity linear .3s;
 }
 
-@media screen and (max-width: 540px) {
-    .popup-edit-profile__close {
+@media screen and (max-width: 900px) {
+    .popup__close {
         background-color: transparent;
         top: -36px;
         right: 0;
@@ -21,6 +21,6 @@
         height: 20px;
     }
 }
-.popup-edit-profile__close:hover{
+.popup__close:hover{
     opacity: 60%;
 }

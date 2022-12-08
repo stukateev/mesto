@@ -1,4 +1,4 @@
-.popup-edit-profile__button {
+.popup__button {
     width: 100%;
     height: 50px;
     margin-top: 48px;
@@ -13,7 +13,7 @@
 
 }
 @media screen and (max-width: 1050px) {
-    .popup-edit-profile__button {
+    .popup__button {
         margin-top: 45px;
         font-size: 14px;
         line-height: 17px;
@@ -21,13 +21,13 @@
     }
 }
 
-.popup-edit-profile__button:disabled {
+.popup__button:disabled {
     border: 1px solid rgba(0, 0, 0, .2);
     background-color: transparent;
     color: rgba(0, 0, 0, .2);
     cursor: default;
 }
 
-.popup-edit-profile__button:hover {
+.popup__button:hover {
     opacity: 80%;
 }
