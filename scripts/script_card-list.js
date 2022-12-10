@@ -25,18 +25,15 @@ const initialCards = [
     }
 ];
 const placesList = document.querySelector('.places-list');
+const placeCardTemplate = document.querySelector('#place-card-template').content;
+const placeCardElement = placeCardTemplate.querySelector('.place-card').cloneNode(true);
 
 
 function createMarkup(citiName, linkToPic) {
-    const placeCardTemplate = document.querySelector('#place-card-template').content;
-    const placeCardElement = placeCardTemplate.querySelector('.place-card').cloneNode(true);
-
     placeCardElement.querySelector(".place-card__name").textContent = citiName;
     placeCardElement.querySelector(".place-card__image").style.backgroundImage = `url(${linkToPic})`;
     return placeCardElement;
 }
-
-
 
 window.addEventListener('load', function () {
     initialCards.forEach(function (obj) {
@@ -57,8 +54,8 @@ buttonAddCard.addEventListener('click', function () {openPopup(popupAddCard)});
 
 function addNewCard(evt) {
     evt.preventDefault();
-    let nameF = nameCardForm.value;
-    let link = urlCardForm.value;
+    const nameF = nameCardForm.value;
+    const link = urlCardForm.value;
     placesList.prepend(createMarkup(nameF, link));
     closePopup(popupAddCard);
     addCardForm.reset();

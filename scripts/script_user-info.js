@@ -6,7 +6,6 @@ const formElement = popupUserInfo.querySelector(".popup__form")
 const namePage = document.querySelector(".user-info__name")
 const jobPage = document.querySelector(".user-info__job")
 
-
 const nameInput = formElement.querySelector(".popup__input_type_name")// Воспользуйтесь инструментом .querySelector()
 const jobInput = formElement.querySelector(".popup__input_type_info")// Воспользуйтесь инструментом .querySelector()
 
@@ -30,15 +29,12 @@ function closePopup(popup){
 }
 function openPopup(popup){
     popup.classList.remove("popup_disabled")
-    if (popup===popupUserInfo) {
-        refreshValueInput();
-    }
 }
 const closeButtons = document.querySelectorAll('.popup__close');
 closeButtons.forEach((button) => {
     const popup = button.closest('.popup');
     button.addEventListener('click', () => closePopup(popup));
 });
-buttonUserInfo.addEventListener('click', function () {openPopup(popupUserInfo)});
+buttonUserInfo.addEventListener('click', function () {openPopup(popupUserInfo); refreshValueInput()});
 
 
