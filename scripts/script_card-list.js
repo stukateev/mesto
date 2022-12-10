@@ -30,9 +30,9 @@ const placesList = document.querySelector('.places-list');
 function createMarkup(citiName, linkToPic) {
     const placeCardTemplate = document.querySelector('#place-card-template').content;
     const placeCardElement = placeCardTemplate.querySelector('.place-card').cloneNode(true);
+
     placeCardElement.querySelector(".place-card__name").textContent = citiName;
     placeCardElement.querySelector(".place-card__image").style.backgroundImage = `url(${linkToPic})`;
-
     return placeCardElement;
 }
 
@@ -44,31 +44,23 @@ window.addEventListener('load', function () {
     })
 })
 
-let buttonAddCard = document.querySelector(".user-info__button");
-let popupAddCard = document.querySelector(".popup-add-card");
-let closeTabAddCard = popupAddCard.querySelector(".popup__close");
-function openAddCard(){
-    popupAddCard.classList.remove("popup_disabled")
-}
+const buttonAddCard = document.querySelector(".user-info__button");
+const popupAddCard = document.querySelector(".popup-add-card");
 
 
-function closeAddCard(){
-    popupAddCard.classList.add("popup_disabled")
-}
+const addCardForm = popupAddCard.querySelector(".popup__form");
+const nameCardForm = addCardForm.querySelector(".popup__input_type_name");
+const urlCardForm = addCardForm.querySelector(".popup__input_type_url");
 
-let addCardForm = popupAddCard.querySelector(".popup__form");
-let nameCardForm = addCardForm.querySelector(".popup__input_type_name");
-let urlCardForm = addCardForm.querySelector(".popup__input_type_url");
+buttonAddCard.addEventListener('click', function () {openPopup(popupAddCard)});
 
-buttonAddCard.addEventListener('click', openAddCard);
-closeTabAddCard.addEventListener('click', closeAddCard);
 
 function addNewCard(evt) {
     evt.preventDefault();
     let nameF = nameCardForm.value;
     let link = urlCardForm.value;
     placesList.prepend(createMarkup(nameF, link));
-    closeAddCard();
+    closePopup(popupAddCard);
     addCardForm.reset();
 }
 
