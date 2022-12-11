@@ -26,13 +26,13 @@ const initialCards = [
 ];
 const placesList = document.querySelector('.places-list');
 const placeCardTemplate = document.querySelector('#place-card-template').content;
-const placeCardElement = placeCardTemplate.querySelector('.place-card').cloneNode(true);
-
+const placeCardElement = placeCardTemplate.querySelector('.place-card')
 
 function createMarkup(citiName, linkToPic) {
-    placeCardElement.querySelector(".place-card__name").textContent = citiName;
-    placeCardElement.querySelector(".place-card__image").style.backgroundImage = `url(${linkToPic})`;
-    return placeCardElement;
+    const placeCardElementClone = placeCardElement.cloneNode(true);
+    placeCardElementClone.querySelector(".place-card__name").textContent = citiName;
+    placeCardElementClone.querySelector(".place-card__image").style.backgroundImage = `url(${linkToPic})`;
+    return placeCardElementClone;
 }
 
 window.addEventListener('load', function () {

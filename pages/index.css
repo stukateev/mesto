@@ -32,7 +32,7 @@
 @import url(../blocks/popup-image/__content/popup-image__content.css);
 @import url(../blocks/popup-image/__name/popup-image__name.css);
 @import url(../blocks/popup-image/__img/popup-image__img.css);
-@import url(../blocks/popup-image/popup-image.css);
+
 
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/_disabled/popup_disabled.css);
@@ -42,6 +42,7 @@
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__form/popup__form.css);
 @import url(../blocks/popup/__input/popup__input.css);
+@import url(../blocks/popup-image/popup-image.css);
 
 
 
