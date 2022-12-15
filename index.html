@@ -35,10 +35,12 @@
             <button type="button" class=" button popup__close"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
             <form class="popup__form" name="formProfile" >
-              <input type="text" name="nameX" class="popup__input popup__input_type_name" placeholder="Имя"
-                     autocomplete="off" minlength="3" maxlength="25" required>
-              <input type="text" name="info" class="popup__input popup__input_type_info" placeholder="О себе"
-                     autocomplete="off" minlength="4" maxlength="40" required>
+              <input id="name-input" type="text" name="nameX" class="popup__input popup__input_type_name" placeholder="Имя"
+                     autocomplete="off" minlength="2" maxlength="40" required>
+              <span class="name-input-error popup__input-error"></span>
+              <input id="info-input" type="text" name="info" class="popup__input popup__input_type_info" placeholder="О себе"
+                     autocomplete="off" minlength="2" maxlength="200" required>
+              <span class="info-input-error popup__input-error"></span>
               <button type="submit" name="submit" class="button popup__button ">Сохранить</button>
             </form>
           </div>
@@ -49,10 +51,12 @@
             <button type="button" class=" button popup__close"></button>
             <h2 class="popup__title">Новое место</h2>
             <form class="popup__form" name="new">
-              <input type="text" name="name" class="popup__input popup__input_type_name "
+              <input id="title-input" type="text" name="name" class="popup__input popup__input_type_name "
                      placeholder="Название" autocomplete="off" minlength="2" maxlength="30" required>
-              <input type="url" name="link" class="popup__input popup__input_type_url "
+              <span class="title-input-error popup__input-error"></span>
+              <input id="link-input" type="url" name="link" class="popup__input popup__input_type_url "
                      placeholder="Ссылка на картинку" autocomplete="off" required>
+              <span class="link-input-error popup__input-error"></span>
               <button type="submit" name="submit" class="button popup__button ">Создать</button>
             </form>
           </div>
@@ -86,7 +90,7 @@
     <script src="scripts/script_card-list.js"></script>
     <script src="scripts/script_user-info.js"></script>
     <script src="scripts/script_click_card-list.js"></script>
-
+    <script src="scripts/validate.js"></script>
   </body>
 
 </html>
