@@ -49,6 +49,13 @@ const setEventListeners = (formElement, elements) => {
 
     toggleButtonState(inputList, buttonElement, elements);
 
+
+    formElement.addEventListener('reset', () => {
+        setTimeout(() => {
+            toggleButtonState(inputList, buttonElement, elements);
+        }, 0);
+    });
+
     inputList.forEach((inputElement) => {
         inputElement.addEventListener('input', function () {
             checkInputValidity(formElement, inputElement, elements);
@@ -57,14 +64,14 @@ const setEventListeners = (formElement, elements) => {
     });
 };
 
-const enableValidation = (elements) => {
-    const formList = Array.from(document.querySelectorAll(elements.formSelector));
+const enableValidation = (selectors) => {
+    const formList = Array.from(document.querySelectorAll(selectors.formSelector));
     formList.forEach((formElement) => {
-        setEventListeners(formElement, elements);
+        setEventListeners(formElement, selectors);
     });
 };
 
-const elements = {
+const selectors = {
     formSelector: '.popup__form',
     inputSelector: '.popup__input',
     submitButtonSelector: '.popup__button',
@@ -73,4 +80,4 @@ const elements = {
     errorClass: 'popup__error_visible'
 }
 
-enableValidation(elements)
+enableValidation(selectors)
