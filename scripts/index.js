@@ -134,6 +134,7 @@ function addNewCard(evt) {
     const link = urlCardForm.value;
     placesList.prepend(createMarkup(nameF, link));
     addCardForm.reset();
+    closePopup(popupAddCard)
 }
 
 addCardForm.addEventListener('submit', addNewCard);
