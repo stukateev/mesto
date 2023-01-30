@@ -1,11 +1,11 @@
-import {openPopup, popupImage, popupImageImg, popupImageName} from "./index.js";
 export default
 
 class Card{
-    constructor(title, imageLink) {
+    constructor(title, imageLink,  cardTemplate, handleCardClick) {
         this._imageLink = imageLink;
         this._title = title;
-
+        this._handleCardClick = handleCardClick;
+        this._cardTemplate = cardTemplate
     }
 
     _setEventListener(){
@@ -13,7 +13,7 @@ class Card{
             this._likeCard();
         });
         this._cardImage.addEventListener('click', () =>{
-            this._openCardPopup();
+            this._handleCardClick(this._title, this._imageLink);
         });
         this._card.querySelector('.place-card__delete-icon').addEventListener('click', () => {
             this._deleteCard();
@@ -25,7 +25,7 @@ class Card{
 
     generateCard(){
 
-        this._card = document.querySelector('#place-card-template').content.querySelector('.place-card').cloneNode(true);
+        this._card = this._cardTemplate.content.querySelector('.place-card').cloneNode(true);
         this._cardImage = this._card.querySelector('.place-card__image');
         this._cardLike = this._card.querySelector('.place-card__like-icon');
 
@@ -41,14 +41,7 @@ class Card{
         this._card.remove(this._card);
         this._card = null;
     }
-    _openCardPopup(){
-        openPopup(popupImage);
-        const styleLink = this._cardImage.getAttribute('style').slice(23,-3);
-        const selectCard = this._cardImage.closest('.place-card').querySelector(".place-card__name").textContent;
-        popupImageImg.src = styleLink;
-        popupImageImg.alt = selectCard
-        popupImageName.textContent = selectCard;
-    }
+
 }
 
 

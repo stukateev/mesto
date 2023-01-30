@@ -14,10 +14,11 @@ const popupAddCard = document.querySelector(".popup-add-card");
 const addCardForm = document.forms["add-card-form"];
 const nameCardForm = addCardForm.elements["name"];
 const urlCardForm = addCardForm.elements["link"];
-export const popupImage = document.querySelector(".popup-image");
-export const popupImageImg = popupImage.querySelector(".popup-image__img")
-export const popupImageName = popupImage.querySelector(".popup-image__name")
+const popupImage = document.querySelector(".popup-image");
+const popupImageImg = popupImage.querySelector(".popup-image__img")
+const popupImageName = popupImage.querySelector(".popup-image__name")
 const closeButtons = document.querySelectorAll('.popup__close');
+const cardTemplate = document.querySelector('#place-card-template')
 
 const initialCards = [
     {
@@ -53,13 +54,13 @@ const selectors = {
     inactiveButtonClass: 'popup__button_disabled',
     inputErrorClass: 'popup__input_type_error',
     errorClass: 'popup__error_visible'
+
 }
 
 function refreshValueInput(){
     nameInput.value = namePage.textContent
     jobInput.value = jobPage.textContent
 }
-
 
 function handleProfileFormSubmit (evt) {
     evt.preventDefault();
@@ -70,13 +71,11 @@ function handleProfileFormSubmit (evt) {
 
 profileForm.addEventListener('submit', handleProfileFormSubmit);
 
-
-
 closeButtons.forEach((button) => {
     const popup = button.closest('.popup');
     button.addEventListener('click', () => closePopup( popup));
 });
-buttonUserInfo.addEventListener('click', function () {openPopup(popupUserInfo); refreshValueInput(); cleaningErrorsAfterClosing(popupUserInfo)});
+buttonUserInfo.addEventListener('click', function () {openPopup(popupUserInfo); refreshValueInput(); popupEditValidation.resetValidation()});
 
 
 function closePopup(popup){
@@ -85,23 +84,12 @@ function closePopup(popup){
     document.removeEventListener('keydown', closeByEsc);
     document.removeEventListener("mousedown", closeByOutsideClick);
 }
-export function openPopup(popup){
+function openPopup(popup){
     popup.classList.add("popup_opened")
     popup.classList.remove("popup_disabled")
     document.addEventListener('keydown', closeByEsc)
     document.addEventListener('mousedown', closeByOutsideClick)
 
-}
-function cleaningErrorsAfterClosing(popup){
-    const inputElements = popup.querySelectorAll('.popup__input')
-    const inputErrorElements = popup.querySelectorAll('.popup__input-error')
-    inputErrorElements.forEach((inputErrorElement) => {
-        inputErrorElement.textContent = "";
-        inputErrorElement.classList.remove(selectors.errorClass);
-    });
-    inputElements.forEach((inputElement) => {
-        inputElement.classList.remove(selectors.inputErrorClass);
-    });
 }
 
 function closeByOutsideClick(evt) {
@@ -118,7 +106,6 @@ function closeByEsc(evt) {
     }
 }
 
-
 const popupEditValidation = new FormValidator(selectors, popupUserInfo);
 popupEditValidation.enableValidation();
 
@@ -126,26 +113,24 @@ const popupAddValidation = new FormValidator(selectors, popupAddCard);
 popupAddValidation.enableValidation();
 
 
+function createCard(name, link) {
+    const card = new Card(name, link, cardTemplate, handleCardClick);
+    return card.generateCard()
+}
 
 
 initialCards.forEach(function (obj) {
-    const card = new Card(obj.name, obj.link);
-    const cardElement = card.generateCard()
-    placesList.appendChild(cardElement);
+    placesList.appendChild(createCard(obj.name, obj.link));
 })
 
-
-
-buttonAddCard.addEventListener('click', function () {openPopup(popupAddCard); addCardForm.reset(); cleaningErrorsAfterClosing(popupAddCard)});
+buttonAddCard.addEventListener('click', function () {openPopup(popupAddCard); addCardForm.reset(); popupAddValidation.resetValidation() });
 
 
 function addNewCard(evt) {
     evt.preventDefault();
     const nameF = nameCardForm.value;
     const link = urlCardForm.value;
-    const card = new Card(nameF, link);
-    const cardElement = card.generateCard()
-    placesList.prepend(cardElement);
+    placesList.prepend(createCard(nameF, link));
     addCardForm.reset();
     closePopup(popupAddCard);
 }
@@ -153,5 +138,10 @@ function addNewCard(evt) {
 addCardForm.addEventListener('submit', addNewCard);
 
 
-
+function handleCardClick(name, link) {
+    popupImageImg.src = link;
+    popupImageImg.alt = name
+    popupImageName.textContent = name;
+    openPopup(popupImage)
+}
 
