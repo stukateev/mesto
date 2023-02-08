@@ -8,7 +8,6 @@ export default class FormValidator {
         this._errorClass = selectors.errorClass;
     }
 
-
     _hasInvalidInput() {
         return this._inputList.some((inputElement) => {
             return !inputElement.validity.valid;
@@ -78,11 +77,9 @@ export default class FormValidator {
 
     resetValidation() {
         this._toggleButtonState();
-
         this._inputList.forEach((inputElement) => {
             this._hideInputError(inputElement)
         });
-
     }
     enableValidation() {
         this._setEventListeners();
