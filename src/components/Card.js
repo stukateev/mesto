@@ -2,13 +2,11 @@ export default
 
 class Card{
     constructor(item,  cardTemplate, handleCardClick) {
-        this._popup = document.querySelector(".popup-image");
+
         this._imageLink = item.link;
         this._title = item.name;
         this._handleCardClick = handleCardClick;
         this._cardTemplate = cardTemplate
-        this._descriptionImagePopup = this._popup.querySelector('.popup-image__name');
-        this._imgElementPopup = this._popup.querySelector('.popup-image__img');
     }
 
     _setEventListener(){
@@ -16,7 +14,7 @@ class Card{
             this._likeCard();
         });
         this._cardImage.addEventListener('click', () =>{
-            this._handleCardClick(this._title, this._imageLink, this._descriptionImagePopup,  this._imgElementPopup);
+            this._handleCardClick(this._title, this._imageLink);
         });
         this._card.querySelector('.place-card__delete-icon').addEventListener('click', () => {
             this._deleteCard();

@@ -57,8 +57,8 @@ const popupAddCard = new PopupWithForm({
 
 const popupWithImage = new PopupWithImage('.popup-image')
 
-function openImagePopup (cardTitleElement, cardImageElement, descriptionImagePopup, imgElementPopup){
-    popupWithImage.open(cardTitleElement, cardImageElement, descriptionImagePopup, imgElementPopup);
+function openImagePopup (cardTitleElement, cardImageElement){
+    popupWithImage.open(cardTitleElement, cardImageElement);
 }
 
 const popupEditProfile = new PopupWithForm({
