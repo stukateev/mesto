@@ -10,12 +10,14 @@
   <body class="page">
     <div class="root">
       <header class="header">
-        <img src="images/logo.bbe2a6eafac19c3d031c.svg" alt="Место логотип" class="header__logo">
+          <img src="images/logo.bbe2a6eafac19c3d031c.svg" alt="Место логотип" class="header__logo">
       </header>
       <main class="main">
         <section class="profile">
           <div class="user-info">
-            <div class="user-info__photo"></div>
+            <div class="user-info__photo">
+              <button class="user-info__photo-button"></button>
+            </div>
             <div class="user-info__data">
               <h1 class="user-info__name">Жак-Ив Кусто</h1>
               <button type="button" class="button user-info__edit" ></button>
@@ -61,6 +63,29 @@
           </div>
         </div>
 
+        <div class="popup popup-delete popup_disabled">
+          <div class="popup__content popup-delete__content">
+            <button type="button" class="button popup__close"></button>
+            <h2 class="popup__title">Вы уверены?</h2>
+            <form class="popup__form">
+              <button type="submit" class="button popup__button">Да</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="popup popup-avatar popup_disabled">
+          <div class="popup__content popup-avatar__content">
+            <button type="button" class="popup__close"></button>
+            <h2 class="popup__title">Обновить аватар</h2>
+            <form class="popup__form " name="avatar-form" >
+              <input id="avatar-input" type="url" class="popup__input popup__input_type_avatar" name="avatar"
+                     placeholder="Ссылка на картинку" required>
+              <span class="popup__input-error avatar-input-error"></span>
+              <button type="submit" class="button popup__button">Сохранить</button>
+            </form>
+          </div>
+        </div>
+
         <div class="popup popup-image popup_disabled">
           <div class="popup-image__content">
             <button type="button" class=" button popup__close"></button>
@@ -77,12 +102,15 @@
     <template id="place-card-template">
       <div class="place-card">
         <div class="place-card__image">
-
         </div>
         <button class="button place-card__delete-icon"></button>
         <div class="place-card__description">
           <h2 class="place-card__name"></h2>
-          <button class="place-card__like-icon"></button>
+          <div class="place-card__like-box">
+            <button class="place-card__like-icon"></button>
+            <p class="place-card__like-counter">0</p>
+          </div>
+
         </div>
       </div>
     </template>
