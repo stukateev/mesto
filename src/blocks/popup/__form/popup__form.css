@@ -1,7 +1,8 @@
 .popup__form {
     margin-top: 54px;
     position: relative;
-    min-height: 183px;
+    display: flex;
+    flex-direction: column;
 }
 @media screen and (max-width: 1050px) {
     .popup__form {
