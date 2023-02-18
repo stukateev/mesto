@@ -147,6 +147,7 @@ const popupEditProfile = new PopupWithForm({
                 console.log(err);
             })
             .finally(() => {
+
                 popupEditProfile.renderLoading(false);
             })
     }

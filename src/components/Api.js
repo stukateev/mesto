@@ -11,28 +11,22 @@ export default class Api {
         return Promise.reject(`Ошибка: ${res.status}`);
     }
 
-    _getErr(err) {
-        console.log(err);
-    }
 
     getUserInfo() {
         return fetch(`${this._url}/users/me`, {
             headers: this._headers
         })
-            .then(this._getRes)
-            .catch(this._getErr);
+            .then(this._getRes);
     }
 
     getInitialCards() {
         return fetch(`${this._url}/cards`, {
             headers: this._headers
         })
-            .then(this._getRes)
-            .catch(this._getErr);
+            .then(this._getRes);
     }
 
     editProfile(data) {
-        console.log(data)
         return fetch(`${this._url}/users/me`, {
             headers: this._headers,
             method: 'PATCH',
@@ -42,7 +36,6 @@ export default class Api {
             }),
 
         }).then(this._getRes)
-            .catch(this._getErr);
     }
 
     createCard(item) {
@@ -51,8 +44,7 @@ export default class Api {
             method: 'POST',
             body: JSON.stringify(item)
         })
-            .then(this._getRes)
-            .catch(this._getErr);
+            .then(this._getRes);
     }
 
     deleteCard(cardId) {
@@ -60,8 +52,7 @@ export default class Api {
             headers: this._headers,
             method: 'DELETE'
         })
-            .then(this._getRes)
-            .catch(this._getErr);
+            .then(this._getRes);
     }
 
     likeCard(cardId) {
@@ -69,8 +60,7 @@ export default class Api {
             headers: this._headers,
             method: 'PUT'
         })
-            .then(this._getRes)
-            .catch(this._getErr);
+            .then(this._getRes);
     }
 
     handleDeleteLikeCard(cardId) {
@@ -78,8 +68,7 @@ export default class Api {
             headers: this._headers,
             method: 'DELETE'
         })
-            .then(this._getRes)
-            .catch(this._getErr);
+            .then(this._getRes);
     }
 
     changeAvatar(data) {
@@ -88,7 +77,6 @@ export default class Api {
             method: 'PATCH',
             body: JSON.stringify(data)
         })
-            .then(this._getRes)
-            .catch(this._getErr);
+            .then(this._getRes);
     }
 }
